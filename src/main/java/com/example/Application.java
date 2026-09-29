@@ -26,6 +26,6 @@ public class Application {
     // Endpoint HTTP para comprobar la aplicación.
     @GetMapping("/")
     public String getStatus() {
-        return "OK - Aplicacion Java funcionando-v1";
+        return "OK - Aplicacion Java funcionando";
     }
 }
