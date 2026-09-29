@@ -23,9 +23,22 @@ public class Application {
         log.info("Java app started");
     }
 
-    // Endpoint HTTP para comprobar la aplicación.
+    // Endpoint original: no afecta a los tests.
     @GetMapping("/")
     public String getStatus() {
-        return "OK - Aplicacion Java funcionando";
+        return "OK";
+    }
+
+    // Nuevo endpoint: muestra la versión.
+    @GetMapping("/version")
+    public String getVersion() {
+        String version = System.getenv("APP_VERSION");
+
+        if (version == null) {
+            version = "desconocida";
+        }
+
+        return "Aplicacion Java - Version: " + version;
     }
 }
+
